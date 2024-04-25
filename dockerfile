@@ -1,5 +1,5 @@
 FROM node:12-alpine
-WORKDIR /app
-COPY . .
+RUN apk add -q https://github.com/AssmaeAlida/todo-app.git
+WORKDIR /todo-app
 RUN yarn install --production
-CMD ["node", "/app/src/index.js"]
+CMD ["node", "/src/index.js"]
